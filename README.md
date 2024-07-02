@@ -2,7 +2,7 @@
 
 <p>Aplikasi Virtual tour dengan nama "VR Cafe Tour Bandar Lampung" ini dibuat untuk menampilkan berbagai macam cafe-cafe yang ada di kota Bandar Lampung. Pengguna dapat menavigasi melalui gambar-gambar 360 derajat dan mendapatkan informasi tentang masing-masing institusi</p>
 <p></p>
-<p>Hasil Demo Aplikasi: https://drive.google.com/drive/folders/1G54LiJZpS8MNgLlynBSXzkod2x4Ma_yp?usp=sharing </p>
+<p>Hasil Demo Aplikasi (gambar-video): https://drive.google.com/drive/folders/1G54LiJZpS8MNgLlynBSXzkod2x4Ma_yp?usp=sharing </p>
 <p><b>*</b></p>
 
 <p>Aplikasi ini dibuat untuk memenuhi tugas Ujian Akhir Semester Mata Kuliah Virtual Reality dengan spesifikasi:</p>
