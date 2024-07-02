@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>TourCafe-VR-Daka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>VR Cafe Tour Bandar Lampung</h1>
+    <h3>By Daka Heldian - UAS Virtual Reality</h3>
+    <button class="button" onclick="showContent('start')">Start</button>
+    <button class="button" onclick="showContent('guide')">Tutorial</button>
+    <button class="button" onclick="showContent('about')">About</button>
+
+    <div id="start" class="content">
+        <iframe src="virtual_tour.html"></iframe>
+        <a href="javascript:void(0)" class="back-button" onclick="hideContent()">Back</a>
+    </div>
+
+    <div id="guide" class="content">
+        <h2>VR Cafe Tour Bandar Lampung</h2>
+        <p>1. Klik tombol "Start" untuk memulai tampilan tour virtual</p>
+        <p>2. Klik tombol "VR" di bagian kanan bawah pada tampilan untuk melihat virtual tour secara full screen.</p>
+        <p>3. Gunakan kursor untuk mengarahkan menavigasi berbentuk lingkaran "Hitam" akan berwarna "Hijau" jika diarahakan dan klikan pada objek yang diinginkan untuk melihat detail tampilan 360.</p>
+        <p>4. Gunakan tombol kembali di sudut kiri atas untuk kembali ke halaman utama (Menu).</p>
+        <a href="javascript:void(0)" class="back-button" onclick="hideContent()">Back</a>
+    </div>
+
+    <div id="about" class="content">
+        <h2>VR Cafe Tour Bandar Lampung</h2>
+        <p>Virtual tour dengan nama "VR Cafe Tour Bandar Lampung" ini dibuat untuk menampilkan berbagai macam cafe-cafe yang ada di kota Bandar Lampung. Anda dapat menavigasi melalui gambar-gambar 360 derajat dan mendapatkan informasi tentang masing-masing institusi.</p>
+        <p>Aplikasi Tour VR 360 ini dibuat untuk memenuhi tugas UAS Virtual Reality dengan spesifikasi:</p>
+        <p>-Tentukan tema dari Virtual Tour (misal: kuliner, kedai kopi, masjid, penginapan)
+        <p>-Hadirkan setidaknya 20 titik (360 sphere yang boleh diambil dari Street View Google Maps)</p>
+        <p>-Buat navigasi dari titik awal dan sesuaikan arahnya</p>
+        <p>-Penambahan informasi (teks, gambar, dan/atau video) menjadi nilai plus</p>
+        <p>-Aplikasi: Splash screen (Opsional) - Menu: tombol Start, Panduan, Tentang (Opsional) Virtual Tour</p>
+        <a href="javascript:void(0)" class="back-button" onclick="hideContent()">Back</a>
+    </div>
+
+    <audio id="background-music" autoplay loop>
+        <source src="assets/cover.mp3" type="audio/mpeg">
+    </audio> 
+
+    <script>
+        function showContent(id) {
+            document.getElementById('start').style.display = 'none';
+            document.getElementById('guide').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hideContent() {
+            document.getElementById('start').style.display = 'none';
+            document.getElementById('guide').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>VR Cafe Tour Bandar Lampung</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component/dist/aframe-proxy-event-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <audio id="click-sound" src="./audio/click.ogg"></audio>
+
+            <img id="backgr" src="./assets/backgr.png">
+
+            <img id="orb1" src="./assets/Cafe Sans.png">
+            <img id="orb2" src="./assets/Cafe Els.png">
+            <img id="orb3" src="./assets/Cafe Faste.png">
+            <img id="orb4" src="./assets/Cafe Dijou.png">
+            <img id="orb5" src="./assets/Cafe Kawung.png">
+            <img id="orb6" src="./assets/Cafe Newtown.png">
+            <img id="orb7" src="./assets/Cafe Nako.png">
+            <img id="orb8" src="./assets/Cafe Marley.png">
+            <img id="orb9" src="./assets/Cafe 91.png">
+            <img id="orb10" src="./assets/Cafe Bento.png">
+            <img id="orb11" src="./assets/Cafe Dresik.png">
+            <img id="orb12" src="./assets/Cafe Fore.png">
+            <img id="orb13" src="./assets/Cafe Mansure.png">
+            <img id="orb14" src="./assets/Cafe Adiksi.png">
+            <img id="orb15" src="./assets/Cafe Kanara.png">
+            <img id="orb16" src="./assets/Cafe Dosoen.png">
+            <img id="orb17" src="./assets/Cafe Nuju.png">
+            <img id="orb18" src="./assets/Cafe Skaye.png">
+            <img id="orb19" src="./assets/Cafe Lieps.png">
+            <img id="orb20" src="./assets/Cafe Moore.png">
+        </a-assets>
+
+        <!-- Kamera + kursor. -->
+        <a-entity id="camera" camera look-controls>
+            <a-cursor id="cursor" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02;"
+                material="color: black; shader: flat" cursor="maxDistance: 30; fuse: true"
+                animation__click="property: scale; from: 0.5 0.5 0.5; to: 1 1 1;startEvents: click; dur: 150;easing:easeInQuad;"
+                animation__fusing="property: scale; from: 1 1 1; to: 0.5 0.5 0.5;startEvents: fusing; dur: 1000;easing:easeInQuad;"
+                event-set__mouseenter="_event: mouseenter; color: springgreen"
+                event-set__mouseleave="_event: mouseleave; color: black" raycaster="objects: .link"></a-cursor>
+        </a-entity>
+
+        <!-- Gambar 360 -->
+        <a-sky id="image-360" src="#backgr"></a-sky>
+
+        <!-- Tautan. -->
+        <a-entity id="links" layout="type: box; columns: 5; margin: 1.5" position="0 -1 -4">
+            <!-- Tautan Cafe Sans -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb1"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb1">
+                <a-text value="Cafe Sans" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Els -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb2"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb2">
+                <a-text value="Cafe Els" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Faste -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb3"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb3">
+                <a-text value="Cafe Faste" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Dijou -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb4"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb4">
+                <a-text value="Cafe Dijou" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Kawung -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb5"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb5">
+                <a-text value="Cafe Kawung" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Newtown -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb6"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb6">
+                <a-text value="Cafe Newtown" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Nako -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb7"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb7">
+                <a-text value="Cafe Nako" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Marley -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb8"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb8">
+                <a-text value="Cafe Marley" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe 91 -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb9"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb9">
+                <a-text value="Cafe 91" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Bento -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb10"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb10">
+                <a-text value="Cafe Bento" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Dresik -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb11"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb11">
+                <a-text value="Cafe Dresik" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Fore -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb12"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb12">
+                <a-text value="Cafe Fore" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Mansure -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb13"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb13">
+                <a-text value="Cafe Mansure" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Adiksi -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb14"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb14">
+                <a-text value="Cafe Adiksi" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Kanara -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb15"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb15">
+                <a-text value="Cafe Kanara" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Dosoen -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb16"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb16">
+                <a-text value="Cafe Dosoen" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Nuju -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb17"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb17">
+                <a-text value="Cafe Nuju" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Skaye -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb18"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb18">
+                <a-text value="Cafe Skaye" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Lieps -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb19"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb19">
+                <a-text value="Cafe Lieps" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+
+            <!-- Tautan Cafe Moore -->
+            <a-entity class="link" geometry="primitive: circle; radius: 0.4;" material="shader: flat; src: #orb20"
+                event-set__click="_event: click; _target: #image-360; _delay: 300;"
+                proxy-event="event: click; to: #image-360; as: fade" sound="on: click; src: #click-sound"
+                data-src="#orb20">
+                <a-text value="Cafe Moore" align="center" position="0 -0.6 0" width="3"></a-text>
+            </a-entity>
+        </a-entity>
+
+        <!-- Skrip klik suara -->
+        <a-entity sound="src: #click-sound"></a-entity>
+        <script>
+            AFRAME.registerComponent('set-image', {
+                schema: {
+                    on: { type: 'string' },
+                    target: { type: 'selector' },
+                    src: { type: 'string' }
+                },
+                init: function () {
+                    var data = this.data;
+                    this.el.addEventListener(data.on, function () {
+                        data.target.setAttribute('src', data.src);
+                    });
+                }
+            });
+    
+            document.querySelectorAll('.link').forEach(link => {
+                link.addEventListener('click', function () {
+                    var imgSrc = this.getAttribute('data-src');
+                    document.querySelector('#image-360').setAttribute('src', imgSrc);
+                });
+            });
+        </script>
+    </a-scene>
+</body>
+
+</html>
